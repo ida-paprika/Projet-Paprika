@@ -1,0 +1,90 @@
+@font-face {
+    font-family: Typewriter;
+    src: url('../../fonts/Typewriter.ttf');
+}
+@font-face {
+    font-family: AardvarkSk8;
+    src: url('../../fonts/AardvarkSk8.ttf');
+}
+@font-face {
+    font-family: EightBitDragon;
+    src: url('../../fonts/EightBitDragon.ttf');
+}
+@font-face {
+    font-family: GooseberryJuice;
+    src: url('../../fonts/GooseberryJuice.ttf');
+}
+@font-face {
+    font-family: OrganicTeabags;
+    src: url('../../fonts/OrganicTeabags.ttf');
+}
+@font-face {
+    font-family: UraniaCzech;
+    src: url('../../fonts/UraniaCzech.ttf');
+}
+@font-face {
+    font-family: HannoverMesse;
+    src: url('../../fonts/HannoverMesse.ttf');
+}
+@font-face {
+    font-family: ImSpiegelland;
+    src: url('../../fonts/ImSpiegelland.ttf');
+}
+@font-face {
+    font-family: MeganJune;
+    src: url('../../fonts/MeganJune.ttf');
+}
+@font-face {
+    font-family: MesseBerlin;
+    src: url('../../fonts/MesseBerlin.ttf');
+}
+@font-face {
+    font-family: MesseMuenchen;
+    src: url('../../fonts/MesseMuenchen.ttf');
+}
+@font-face {
+    font-family: Moonhouse;
+    src: url('../../fonts/Moonhouse.ttf');
+}
+@font-face {
+    font-family: Roundie;
+    src: url('../../fonts/Roundie.ttf');
+}
+@font-face {
+    font-family: TheTruthOfLies;
+    src: url('../../fonts/TheTruthOfLies.ttf');
+}
+@font-face {
+    font-family: Tincture;
+    src: url('../../fonts/Tincture.ttf');
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+html, body {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    background-color: #F1EDF0;
+}
+
+main {
+    margin: 0.5em 0;
+}
+
+.hide {
+    display: none;
+}

@@ -1,0 +1,360 @@
+
+/* MOBILE FIRST */
+/* navigation TOP / BOTTOM */
+    #scroll_to { 
+        display: none;
+        position: fixed; 
+        width: 2em; 
+        height: 2em; 
+        bottom: 20%; 
+        right: 2em;
+    }
+    
+    #scroll_to li {
+        list-style: none;
+    }
+    
+    #scroll_to a { 
+        font-size: 1.7em;
+        color: rgba(175, 125, 161, 0.8); /* 143, 86, 127, 1 */
+    }
+    
+/* ---- CAROUSEL ---- */
+    /* Slideshow container */
+    .slideshow-container {
+        max-width: 1000px;
+        position: relative;
+        margin: auto;
+        background-color: #e0dede;
+    }
+
+    /* Hide the images by default */
+    .mySlides {
+        display: none;
+    }
+    
+    .mySlides img {
+        height: 20em;
+    }
+
+    /* Next & previous buttons */
+    .prev, .next {
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        width: auto;
+        margin-top: -22px;
+        padding: 16px;
+        color: white;
+        font-weight: bold;
+        font-size: 18px;
+        transition: 0.6s ease;
+        border-radius: 0 3px 3px 0;
+        user-select: none;
+    }
+
+    /* Position the "next button" to the right */
+    .next {
+      right: 0;
+      border-radius: 3px 0 0 3px;
+    }
+
+    /* On hover, add a black background color with a little bit see-through */
+    .prev:hover, .next:hover {
+      background-color: rgba(0,0,0,0.8);
+    }
+
+    /* Fading animation */
+    .fade {
+      -webkit-animation-name: fade;
+      -webkit-animation-duration: 1.5s;
+      animation-name: fade;
+      animation-duration: 1.5s;
+    }
+
+    @-webkit-keyframes fade {
+      from {opacity: .4}
+      to {opacity: 1}
+    }
+
+    @keyframes fade {
+      from {opacity: .4}
+      to {opacity: 1}
+    }
+
+/* ---- FORM ---- */
+    .blocForm {
+        margin: 1em 0.5em;
+        padding: 1em;
+        border: 0.2px solid #6D0830;
+        box-shadow: 0px 0px 5px #3a071c;
+        border-radius: 5px;
+        background-color: #EBDFE7;
+    }
+    
+        
+    .formArticle form div, .formModif form div {
+        margin: 0.5em 0;
+        display: flex;
+        flex-direction: column;
+        padding-bottom: 0.5em;
+        border-bottom: 2px dashed #DEBED5;
+    }
+    
+    form div input[name*=lien] {
+        background-image: url(../../images/icones/http.png);background-size: contain;
+        background-repeat: no-repeat;
+        background-position: left;
+        padding-left: 3.9em;
+        
+    }
+    
+    .submit-div input {
+        margin: 0.5em;
+    }
+    
+    #pageInscription .submit-div input {
+        width: 6em;
+    }
+    
+    #pageConnexion .submit-div input {
+        width: 7em;
+    }
+    
+    #addLivre .submit-div input {
+        width: 7em;
+    }
+    
+    #pageInscription .submit-div, #pageConnexion .submit-div, #addLivre .submit-div {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    
+/* ---- TABLES ----*/
+    .flow-scroll {
+        overflow: scroll;
+    }
+
+    .table-custom {
+        table-layout: auto;
+        width: 100%;
+        border: 0.5px solid black;
+        margin: 1em 0;
+        background-color: #FFF;
+    }
+    
+    .table-custom th {
+        background-color: #FFF;
+    }
+    
+    .table-custom tr:nth-child(2n+1){
+        background-color:#e4ecf5;
+    } 
+
+    .table-custom td, .table-custom th {
+        border: 0.5px solid black;
+        overflow: hidden;
+        text-align: center;
+        padding: 0.2em;
+    }
+
+
+/* -- MODAL BOX -- */
+    #btn-modal, #btn-modalUser {
+        cursor: pointer;
+    }
+    
+    #btn-modal {
+        border: none;
+        background-color: transparent;
+        color: red;
+    }
+
+    .modalBox {
+        display: none;
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgb(0,0,0);
+        background-color: rgba(0,0,0,0.4);
+    }
+
+    .modal-contenu {
+        background-color: #e30102 ; /* #c40401 */
+        margin: 15% auto;
+        padding: 1em;
+        border: 1px solid #888;
+        width: 80%;
+        text-align: center;
+    }
+    
+    .style-modal div {
+        display: flex;
+    }
+    
+    .style-modal div:nth-child(1n) {
+        flex-direction: column;
+    }
+    
+    .style-modal div:last-child {
+        flex-direction: row;
+        justify-content: center;
+    }
+    .style-modal label, .style-modal p {
+        text-align: center;
+    }
+    
+    .style-modal label {
+        font-size: 1.5em;
+        font-weight: 600;
+    }
+    
+    .style-modal div:last-child input {
+        margin: 1em;
+    }
+
+    .close, .closeUser {
+        color: #FFF;
+        float: right;
+        font-size: 2em;
+        font-weight: bold;
+        margin-top: -0.5em;
+        margin-right: -0.2em;
+    }
+
+    .close:hover, .close:focus, .closeUser:hover, .closeUser:focus {
+        color: #FFF;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+/* SIGNAL COMMENTAIRES*/
+    #pageAdmin .alert_comment {
+        background-color: #DBA3A3;
+        background-image: url('../../images/icones/exclamation.png');
+        background-size: 2%;
+    }
+
+    .alert_comment h3 {
+        background-color: rgba(219, 163, 163, 0.7);
+        text-align: center;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+
+    .editIcone {
+        border: none;
+        box-shadow: initial;
+        background-color: transparent;
+        background-image: url('../../images/icones/icon-edit.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        width: 2em;
+        cursor: pointer;
+    }
+
+    .edit-contenu {
+        border: 0.5px solid grey;
+        box-shadow: initial;
+        width: 100%;
+    }
+
+    input, select, textarea {
+        border: 0.5px solid #000;
+        border-radius: 5px;
+        box-shadow: 0px 0px 2px #000;
+        padding: 0.2em;
+    }
+    
+
+/* TABLETTE TABLETTE TABLETTE TABLETTE TABLETTE TABLETTE */
+@media screen and (min-width:768px){
+    #scroll_to { 
+        display: initial;
+    }
+    
+    .flow-scroll {
+        overflow: auto;
+    }
+}
+
+
+
+/* DESKTOP DESKTOP DESKTOP DESKTOP DESKTOP DESKTOP */
+@media screen and (min-width:1024px){
+    .formArticle form, .formModif form {
+        margin: 0.5em 0;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        padding-bottom: 0.5em;
+    }
+    
+    .formArticle form div, .formModif form div {
+        width: 50%;
+        border: none;
+        padding: 1em;
+    }
+    
+    .formArticle form div:nth-child(2n), .formModif form div:nth-child(2n) {
+        border-right: 2px dashed #DEBED5;
+        padding: 1em;
+    }
+    
+    
+    #addLivre form>div:nth-of-type(8), #addLivre form>div:nth-of-type(10), 
+    #addLivre form>div:nth-of-type(12), #addLivre form>div:nth-of-type(14){ 
+        border-right: 2px dashed #DEBED5;
+    }
+    #addLivre form>div:nth-of-type(9), #addLivre form>div:nth-of-type(11), 
+    #addLivre form>div:nth-of-type(13) { 
+        border: none;
+    }
+    
+    #pageCompte_user form div:nth-of-type(1){ order: 1; }
+    #pageCompte_user form div:nth-of-type(2){
+        border-right: 2px dashed #DEBED5;
+        order: 3; }
+    #pageCompte_user form div:nth-of-type(3){ order: 5; }
+    #pageCompte_user form div:nth-of-type(4){ order: 2; }
+    #pageCompte_user form div:nth-of-type(5){
+        border: none;
+        order: 4; }
+    #pageCompte_user form div:nth-of-type(6){ order: 6; }
+    #pageCompte_user form div:nth-of-type(7){ order: 7; }
+    #pageCompte_user form div:nth-of-type(8){ order: 8; }
+    #pageCompte_user form div:nth-of-type(9){ order: 9; }
+   
+    .formArticle form div:last-of-type, .formModif form div:last-of-type {
+        border: none;
+        width: 100%;
+    }
+    
+    #pageGestion_user form div:nth-of-type(1){ order: 1; }
+    #pageGestion_user form div:nth-of-type(2){ order: 2; }
+    #pageGestion_user form div:nth-of-type(3){ order: 3; }
+    #pageGestion_user form div:nth-of-type(4){ 
+        border-right: 2px dashed #DEBED5;
+        order: 5; }
+    #pageGestion_user form div:nth-of-type(5){
+        border-right: 2px dashed #DEBED5;
+        order: 7; }
+    #pageGestion_user form div:nth-of-type(6){ order: 4; }
+    #pageGestion_user form div:nth-of-type(7){ order: 6; }
+    #pageGestion_user form div:nth-of-type(8){ order: 8; }
+    #pageGestion_user form div:nth-of-type(9){ order: 9; }
+    #pageGestion_user form div:nth-of-type(10){ order: 10; }
+    
+
+    
+    
+}
+
+

@@ -1,0 +1,207 @@
+
+/* MOBILE FIRST */
+/* ----- HEADER - FOOTER ----- */
+    header, footer {
+        background-color: rgb(58, 7, 28);
+        color: rgb(240, 233, 236);
+    }
+    
+    .nav {
+        margin-bottom: 0.5em;
+    }
+
+    .nav, .logo, .main-nav {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .nav, .main-nav {
+        flex-direction: column;
+    }
+    
+    .nav i {
+        display: none;
+    }
+    
+    .nav a:hover i {
+        display: inline-block;
+        margin: 0.3em;
+        font-size: 0.8em;
+    }
+    
+    .nav a:hover {
+        text-decoration: none;
+    }
+    
+    .user-nav, .user-nav a  {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-decoration: none;
+    }
+    
+    .user-nav {
+        position: absolute;
+        z-index: 1;
+        padding-top: 0.5em;
+        margin-bottom: 0;
+        background: linear-gradient(rgba(169, 39, 132, 0.2), transparent);
+        height: 12em;
+    }
+    
+    .user-nav a span {
+        font-size: 0.7em;
+    }
+
+    .connex-i, .deco-i, .compte-i, .admin-i {
+        line-height: 0.5em;
+        margin: 0.5em 0;
+        width: 3em;
+        height: 1em;
+    }
+    
+    .connex-i span, .deco-i span, .compte-i span, .admin-i span {
+        display: none;
+    }
+    
+    .connex-i:hover span, .deco-i:hover span, .compte-i:hover span, .admin-i:hover span {
+        display: inline-block;
+    }
+    
+    .nav a, .user-nav a {
+        color: #EEEBED;
+    }
+
+    .logo img {
+        margin-top: 1em;
+        width: 10em;
+        height: auto;
+        text-align: center;
+        transition-duration: 2s;
+    }
+    
+    .logo img:hover {
+        background-color: rgba(58, 7, 28, 0.5);
+        border-radius: 25%;
+        transform: scale(1.3);
+        transition-duration: 4s;
+    }
+    
+    
+/* DropDown Menu */
+    .drop-nav {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+
+    .dropBtn {
+        background-color: #700953;
+        color: #FFF;
+        padding: 0.7em 0;
+        font-size: 1em;
+        border: none;
+        cursor: pointer;
+        width: 13em;
+    }
+
+    .dropdown {
+        position: relative;
+        margin-top: 0.5em;
+    }
+
+    .dropLinks {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.4);
+        z-index: 1;
+        width: 100%;
+    }
+
+    .dropLinks a {
+        color: #000;
+        text-align: center;
+        padding: 0.5em 0;
+        text-decoration: none;
+        display: block;
+    }
+
+    .dropLinks a:hover {
+        background-color: #D2B0C8;
+    }
+
+    .dropdown:hover .dropLinks {
+        display: block;
+    }
+
+    .dropdown:hover .dropBtn {
+        background-color: #A90D7D;
+    }
+/* Fin DropDown Menu */
+
+
+    footer {
+        margin-top: auto;
+    }
+
+    footer nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;     
+    }
+
+    footer p {
+        text-align: center;
+    }
+
+
+/* TABLETTE TABLETTE TABLETTE TABLETTE TABLETTE TABLETTE */
+@media screen and (min-width:768px){
+    .nav div {
+        flex-direction: row;
+    }
+    
+    .user-nav {
+        height: 10em;
+    }
+    
+    .main-nav a {
+        padding: 0.5em 2em;
+    }
+    
+    .main-nav a:hover {
+        padding: 0.2em 0.8em;
+    }
+    
+    .main-nav a:last-of-type:hover {
+        padding: 0.2em 0.7em;
+    }
+
+    .dropBtn {
+        width: 15em;
+    }
+    
+    .drop-nav {
+        flex-direction: row;
+    }
+    
+    .dropdown {
+        margin: 0.5em 0.5em 0 0.5em;
+    }
+
+    
+    
+    
+    
+}
+
+
+
+/* DESKTOP DESKTOP DESKTOP DESKTOP DESKTOP DESKTOP */
+@media screen and (min-width:1024px){
+    
+}
+
+

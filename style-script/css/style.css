@@ -1,0 +1,606 @@
+/* Table des Matières
+      Utilisateurs : l. 11
+      Livres-Films : l. 163
+      Article : l. 213
+      Add Livre-Film : l. 351
+      Gestion Admin : l. 445
+*/
+
+/* MOBILE FIRST */
+/* ----- UTILISATEURS ----- */
+    .u-pseudo, .u-mail, .u-mdp {
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: left;
+        padding-left: 2.2em;
+        border-top-left-radius: 20px;
+        border-bottom-left-radius: 20px;
+    }
+    
+    .u-pseudo {
+        background-image: url("../../images/icones/user");
+    }
+    
+    .u-mail {
+        background-image: url("../../images/icones/mail");
+    }
+    
+    .u-mdp {
+        background-image: url("../../images/icones/lock");
+    }
+    
+    .lien-color, .lien-null {
+        font-size: 2em;
+        margin: 0 0.5em;
+    }
+    .lien-color {
+        color: #007bff;
+    }
+    
+    .lien-null {
+        color: red;
+    }
+    
+    #pageConnexion form div, #pageInscription form div {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    #pageConnexion input[type=submit], #pageInscription input[type=button] {
+        
+    }
+    
+    #pageCompte_user, #pageProfil_user {
+        margin-top: 1em;
+    }
+
+    #pageCompte_user .userAvatar, #pageProfil_user .userAvatar {
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+        float: left;
+        margin-right: 0.5em;
+    }
+    
+    #pageCompte_user h1, #pageProfil_user h1 {
+        font-size: 1.5em;
+    }
+    
+    #pageCompte_user h1 span, #pageProfil_user h1 span {
+        color: #4a015d;
+    }
+    
+    #pageCompte_user .actions_compte {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    
+    #pageCompte_user button, .formModif input[type=submit], .formModif input[type=button] {
+        border-radius: 5px;
+        padding: 0.3em;
+        margin: 0.5em auto;
+    }
+    
+    .actions_compte .modif_profil, .formModif input[type=submit] {
+        border: 3px solid #bb0102;
+        background-color: #34C5B4;
+        color: #bb0102;
+    }
+    
+    .actions_compte .suppr_compte, .formModif input[type=button] {
+        border: 3px solid #34C5B4;
+        background-color: #bb0102;
+        color: #34C5B4;
+    }
+    
+    #btnModifMdp {
+        border: 3px solid #1BAB97;
+        background-color: transparent;
+        box-shadow: 0px 0px 3px #000;
+    }
+    
+    #btnValidForm {
+        border: 3px solid #bb0102;
+        background-color: transparent;
+        color: #000;
+        box-shadow: 0px 0px 3px #000;
+        padding: 0.3em 1.5em;
+        font-size: 1.2em;
+        font-weight: 600;
+    }
+    
+    .formModif input[type=submit] {
+        background-color: #3FBF7F;
+        color: #000;
+        padding: 0.3em 1.5em;
+        font-size: 1.2em;
+        letter-spacing: 0.1em;
+        font-weight: 600;
+    }
+    
+    #formModif_hide_show, #modifMdp_hide_show, #validForm_hide_show, #apercu_hide_show {
+        display : none;
+    }
+    
+    .formModif form button, .formLivre form button {
+        border: 3px solid #bb0102;
+    }
+    
+    #modifMdp_hide_show {
+        border: none;
+    }
+    
+    .vignette {
+        width: 40px;
+        height: 40px;
+        object-fit: cover;        
+    }
+    
+    .fa-edit {
+        color: green;
+    }
+    
+    .fa-trash {
+        color: red;
+    }
+    
+    .isLivre {
+        background-color: greenyellow;
+    }
+    
+    .isFilm {
+        background-color: blueviolet;
+    }
+    
+
+    .formModif input[type=submit], .formModif input[type=button] {
+        margin: 0.5em auto;
+    }
+
+    
+/* ----- LIVRES - FILMS ----- */    
+    .artLivres {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .publication {
+        margin-bottom: 1em;
+    }
+  
+    #pageFilms .accordion {
+        background-image: url("../../images/accordion/Ordure2.jpg");
+    }
+    
+    .accordion {
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        font-size: 2.5em;
+        color: #FFF;
+        text-shadow: 0px 0px 3px #000;
+        cursor: pointer;
+        padding: 3em 0.3em 0.3em 0.3em;
+        width: 100%;
+        text-align: center;
+        border: 2px solid transparent;
+        outline: none;
+        transition: 0.4s;
+        display: flex;
+        flex-direction: column;
+        height: 7em;
+    }
+    
+    .accordion p {
+        margin-top: auto;
+    }
+    
+    .accordion p:after {
+        content: '\02795';
+        font-size: 0.3em;
+        color: #777;
+        float: right;
+    }
+
+    .active p:after {
+        content: "\2796";
+    }
+    
+    #pageLivres .panel {
+        background-image: url("../../images/accordion/accordion_bg2.jpg");
+        background-position: center;
+        padding: 0.5em 1em;
+    }
+    
+    #pageFilms .panel {
+        background-image: url("../../images/accordion/projection3.jpg");
+        background-position: bottom;
+        padding: 1.5em 1em 1.5em 1em;
+    }
+    
+    .panel {
+        background-color: #E7E5DE;
+        background-size: cover;
+        background-repeat: no-repeat;
+        overflow: hidden;
+        font-size: 1em;
+        display: none;
+    }
+    
+    .hide-panel {
+        display: none;
+    }
+    
+    .show-panel {
+        display: block;
+    }
+    
+    .panel span {
+        font-style: italic;
+        text-decoration: underline;
+    }
+    
+    .panel .couverture, .panel .affiche {
+        width: 8em;
+        float: left;
+        margin: 0 0.5em 0.5em 0;
+    }
+    
+    
+/* PAGE ARTICLE */
+    #pageArticle_livre {
+        margin-top: 1em;
+    }
+
+    #pageArticle_livre .panel {
+        border: 3px dashed #ABA590;
+        display: block;
+        padding: 1em;
+        border: none;
+    }
+    
+    #pageArticle_livre .titreArticle {
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        font-family: Januszowski;
+        font-size: 2.5em;
+        color: #FFF;
+        text-shadow: 0px 0px 3px #000000;
+        padding: 3em 0.3em 2em 0.3em;
+        width: 100%;
+        text-align: center;
+        border: none;
+    }
+    
+    .panel .couverture {
+        width: 10em;
+    }
+    
+    .panel .spoiler {
+        background-color: #494c4e;
+        font-style: initial;
+        text-decoration: initial;
+    }
+    
+    .panel .spoiler:hover {
+        background-color: transparent;
+    }
+    
+    .user_article p {
+        text-align: right;
+    }
+    
+    .user_article img {
+        float: right;
+        width: 40px;
+        height: 40px;
+        object-fit: cover;
+        margin: 0 0.5em;
+    }
+    
+    .block_comments {
+        padding: 1em;
+    }
+    
+    .affichComment img {
+        float: left;
+        width: 20px;
+        height: 20px;
+        object-fit: cover;
+        margin-right: 0.2em;        
+    }
+    
+    .affichComment p {
+        margin-bottom: 0;
+    }
+    
+    .signal_com, .signal_com:hover {
+        color: red;
+    }
+    
+    .addComment {
+        border: none;
+        background-color: #EDEDEC;
+        margin: 1em 0;
+        padding-bottom: 0;
+    }
+    
+    .addComment form div {
+        display: flex;
+    }
+    
+    .addComment form div:first-of-type {
+        flex-direction: column;
+    }
+    
+    .addComment form div:last-of-type {
+        flex-direction: row;
+        justify-content: center;
+    }
+    
+    .addComment input {
+        font-size: 2em;
+        border: none;
+    }
+    
+    #pageArticle_livre .addComment input[type=submit], #pageArticle_livre .addComment input[type=button] {
+        border: none;
+        border-radius: 5px;
+        box-shadow: 0px 0px 2px #000;
+        padding: 0.2em;
+        border-radius: 5px;
+        padding: 0 0.3em;
+        margin: 0.5em;
+    }
+    
+    #pageArticle_livre .addComment input[type=submit] {
+        background-color: green;
+    }
+    
+    #pageArticle_livre .addComment input[type=button] {
+        background-color: red;
+    }
+    
+    
+/* ADD - Livre & Film */
+    .info-form, #font-list {
+        display : none;
+    }
+    
+    #addLivre .fa-eye{
+        font-size: 1.5em;
+    }
+
+    .fa-question-circle:hover {
+        cursor: help;
+    }
+    
+    .fa-question-circle:hover + .info-form {
+        display : inline-block;
+        background-color: #CFE6E2;
+        padding: 0.3em;
+        border: 2px dashed #74D2BF;
+        max-width: 40%;
+        position: absolute;
+        z-index: 1;
+    }
+    
+    .choix-font button {
+        border: none;
+        background-color: transparent;
+        text-align: left;
+    }
+
+    #font-list {
+        font-size: 1.2em;
+    }
+
+
+    #addLivre .vignette {
+        max-width: 100px;
+        object-fit: cover;        
+    }
+    
+    #addLivre .liste_genres, #addFilm .liste_genres, #pageGestion_livre .liste_genres {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        border: none;
+    }
+    
+    #addLivre .check_genre, #addFilm .check_genre, #pageGestion_livre .check_genre {
+        flex: 1;
+        margin: 0.5em;
+        border: none;
+        text-align: center;
+    }
+    
+    #apercu_hide_show {
+        display: block;
+    }
+    
+    #apercu_hide_show div {
+        margin-top: 0;
+        margin-bottom: 0;
+        border: none;
+    }
+    
+    .test_accordion {
+        background-image: url("../../images/accordion/livre1.jpg");
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        font-family: Januszowski;
+        font-size: 2.5em;
+        color: #ABA590;
+        text-shadow: 0px 0px 3px #000000;
+        padding: 5em 0.3em 0.3em 0.3em;
+        width: 100%;
+        text-align: center;
+        border: none;
+        outline: none;
+    }
+    
+    #apercu_hide_show .test_panel {
+        padding: 0.5em 1em;
+        background-color: #E7E5DE;
+        background-image: url("../../images/accordion/accordion_bg2.jpg");
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        overflow: hidden;
+        font-size: 1em;
+        border: 3px dashed #ABA590;
+    }
+    
+    .test_panel .couverture, .test_panel .affiche {
+        width: 8em;
+        float: left;
+        margin: 0 0.5em 0.5em 0;
+    }
+
+    .action_addArticle {
+        align-items: center;
+    }
+    
+    .formArticle input[type=submit], .formArticle input[type=button] {
+        margin: 0.5em;
+        padding: 0.5em 1em;
+    }
+
+/* --- GESTION ADMINISTRATEUR --- */
+    #pageAdmin section {
+        border: none;
+        border-radius: 5px;
+        padding: 1em;
+        background-color: #D2B0C8;
+    }
+    
+    #pageAdmin .cards-board {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items: center;
+        background-color: transparent;
+    }
+    
+    .cards-board article {
+        background-color: #FFF;
+        background-image:linear-gradient(to top, #FFF 55%, #BEA1B5);
+        border: 3px solid #591C3C;
+        border-radius: 10px;
+        box-shadow: 0px 0px 3px #591C3C;
+        width: 14em;
+        margin: 0.5em;
+        padding: 0.5em;
+        text-align: center;
+        height: 17em;
+    }
+    
+    .cards-board article:last-of-type div>p:first-of-type {
+        font-size: 1em;
+        margin: 0;
+    }
+    
+    .cards-board article h4 {
+        font-weight: 600;
+        margin: 0;
+    }
+    
+    .cards-board article p {
+        font-size: 1.3em;
+    }
+    
+    .cards-board article>p {
+        font-size: 3em;
+        font-weight: bold;
+        color: #700953;
+    }
+    
+    #pageGestion_user td img {
+        width: 40px;
+        height: 40px;
+        object-fit: cover;
+    }
+    
+    #pageGestion_livre img {
+        width: 50px;
+    }
+    
+    #pageGestion_livre .img-entete {
+        width: 80px;
+    }
+
+
+/* TABLETTE TABLETTE TABLETTE TABLETTE TABLETTE TABLETTE */
+@media screen and (min-width:768px){
+    #pageAdmin .cards-board {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    
+    .cards-board article {
+        width: 12em;
+    }
+    
+    
+    
+}
+
+
+
+/* DESKTOP DESKTOP DESKTOP DESKTOP DESKTOP DESKTOP */
+@media screen and (min-width:1024px){
+    .cards-board article {
+        width: 14em;
+    }
+    
+    .artLivres {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    
+    .publication {
+        width: 46%;
+        margin: 0.5em;
+    }
+    
+    .accordion {
+        height: 7em;
+        padding: 3em 0.3em 0.3em 0.3em;
+        border: 2px solid transparent;
+    }
+    
+    .publication:nth-child(2n+1) .panel {
+        width: 214.5%;
+        transform: translate(0, 0);
+    }
+    
+    .publication:nth-child(2n+0) .panel {
+        width: 214.5%;
+        transform: translate(-53.4%, 0);
+    }
+    
+    #addLivre .liste_genres, #pageGestion_livre .liste_genres {
+        width: 100%;
+        padding: 0;
+    }
+    
+    #addLivre .check_genre, #pageGestion_livre .check_genre {
+        margin: 0;
+    }
+    
+    #addLivre .block-genres, #pageGestion_livre .block-genres {
+        width: 100%;
+        border: none;
+        border-top: 2px dashed #DEBED5;
+        border-bottom: 2px dashed #DEBED5;
+    }
+
+
+}
+
+
